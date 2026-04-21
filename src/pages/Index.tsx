@@ -9,35 +9,20 @@ import ContactSection from "@/components/portfolio/ContactSection";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
-      {/* Ambient glow */}
-      <div className="pointer-events-none fixed inset-0 bg-gradient-glow opacity-60" aria-hidden="true" />
+    <div className="space-y-16 py-10 lg:py-16">
+      <HeroSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <ToolsSection />
+      <ThoughtsSection />
+      <ContactSection />
 
-      <FloatingNav />
-
-      <div className="relative max-w-[1500px] mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[28%_1fr] gap-10 lg:gap-16">
-          {/* Sticky left profile */}
-          <aside className="lg:sticky lg:top-0 lg:h-screen flex items-center justify-center pt-24 lg:pt-0">
-            <ProfileCard />
-          </aside>
-
-          {/* Right scrolling content */}
-          <div className="min-w-0">
-            <HeroSection />
-            <ProjectsSection />
-            <ExperienceSection />
-            <ToolsSection />
-            <ThoughtsSection />
-            <ContactSection />
-
-            <footer className="py-10 text-center text-sm text-muted-foreground border-t border-border">
-              © {new Date().getFullYear()} Aditya Pal · Crafted with care.
-            </footer>
-          </div>
-        </div>
-      </div>
-    </main>
+      <footer className="py-20 text-center border-t border-white/5 lg:hidden">
+        <p className="text-sm font-black tracking-[0.3em] text-muted-foreground uppercase opacity-40">
+          © {new Date().getFullYear()} ADITYA PAL · INSPIRED BY SAWAD
+        </p>
+      </footer>
+    </div>
   );
 };
 

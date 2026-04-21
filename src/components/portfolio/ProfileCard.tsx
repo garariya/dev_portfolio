@@ -10,7 +10,7 @@ const socials = [
 
 const ProfileCard = () => {
   return (
-    <div className="relative w-full max-w-sm mx-auto">
+    <div className="relative w-full max-w-[320px] mx-auto">
       {/* Decorative dashed circle */}
       <svg
         className="absolute -top-6 -left-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] pointer-events-none z-0"
@@ -28,48 +28,55 @@ const ProfileCard = () => {
         />
       </svg>
 
-      <div className="relative z-10 bg-white rounded-3xl p-6 shadow-elevated">
+      <div className="relative z-10 bg-profile-bg rounded-[1.5rem] p-6 shadow-sawad overflow-hidden group">
+        {/* Decorative Neon Element */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-primary/20 blur-[40px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        
         {/* Photo */}
-        <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-primary">
+        <div className="relative rounded-[1.5rem] overflow-hidden aspect-[4/5] bg-black/5">
           <img
             src={profileImage}
             alt="Aditya Pal — Full Stack Developer"
             width={1024}
             height={1024}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </div>
 
-        {/* Name */}
-        <h2 className="mt-6 text-3xl font-black text-neutral-900 text-center tracking-tight">
-          Aditya Pal
-        </h2>
-
-        {/* Flame badge */}
-        <div className="flex justify-center mt-3">
-          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center shadow-glow animate-pulse-glow">
-            <Flame className="w-4 h-4 text-white" fill="currentColor" />
+        {/* Info */}
+        <div className="mt-6">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-4 h-[2px] bg-secondary" />
+            <span className="text-[9px] font-black tracking-[0.3em] text-secondary uppercase">Available</span>
           </div>
+          <h2 className="text-3xl font-black text-profile-text tracking-tighter uppercase leading-[0.9]">
+            Aditya<br/>Pal
+          </h2>
         </div>
 
         {/* Bio */}
-        <p className="mt-4 text-center text-neutral-500 text-[15px] leading-relaxed px-2">
-          I build scalable digital products with design + code + automation.
+        <p className="mt-4 text-black/60 text-xs leading-relaxed font-bold">
+          Creative developer crafting digital experiences with code, design and AI.
         </p>
 
-        {/* Socials */}
-        <div className="mt-6 flex items-center justify-center gap-5">
+        {/* Socials - Pill Style */}
+        <div className="mt-8 flex flex-wrap gap-2">
           {socials.map(({ icon: Icon, href, label }) => (
             <a
               key={label}
               href={href}
               aria-label={label}
-              className="text-primary hover:scale-110 transition-transform duration-200"
+              className="px-4 py-2 rounded-full bg-black/5 border border-black/5 text-profile-text hover:bg-primary transition-all duration-300"
             >
-              <Icon className="w-5 h-5" strokeWidth={2} />
+              <Icon className="w-4 h-4" strokeWidth={2} />
             </a>
           ))}
         </div>
+
+        {/* Contact Link */}
+        <button className="mt-6 w-full py-3.5 rounded-xl bg-black text-white font-black text-[9px] uppercase tracking-[0.3em] hover:bg-secondary transition-all duration-500 shadow-xl">
+          Get in touch
+        </button>
       </div>
     </div>
   );

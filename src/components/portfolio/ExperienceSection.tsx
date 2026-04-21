@@ -22,32 +22,39 @@ const items = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="min-h-screen py-24">
+    <section id="experience" className="py-16">
       <SectionHeading line1="3 YEARS OF" line2="EXPERIENCE" />
 
-      <div className="mt-14 space-y-4">
+      <div className="mt-20 space-y-6">
         {items.map((item, i) => (
           <motion.div
             key={item.role}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group p-7 rounded-3xl border border-transparent hover:bg-surface hover:border-border transition-all duration-300"
+            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="group bento-card p-10 flex flex-col md:flex-row justify-between gap-8 h-full"
           >
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-2xl font-bold text-foreground">{item.role}</h3>
-              <ArrowUpRight
-                className="w-5 h-5 text-primary shrink-0 group-hover:rotate-12 transition-transform"
-                strokeWidth={2.5}
-              />
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <span className="w-8 h-[2px] bg-secondary" />
+                <span className="text-[10px] font-black tracking-[0.3em] text-secondary uppercase">
+                  {item.period}
+                </span>
+              </div>
+              <h3 className="text-4xl font-black text-foreground uppercase tracking-tight leading-[0.9] group-hover:text-primary transition-colors">
+                {item.role}
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed font-bold max-w-xl">
+                {item.desc}
+              </p>
             </div>
-            <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl">
-              {item.desc}
-            </p>
-            <p className="mt-5 text-sm text-muted-foreground/70 font-medium">
-              {item.period}
-            </p>
+            
+            <div className="shrink-0 flex items-start justify-end">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary transition-all">
+                <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-black transition-colors" />
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>

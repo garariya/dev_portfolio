@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Sparkles } from "lucide-react";
-
-const stats = [
-  { value: "+20", label: "PROJECTS\nCOMPLETED" },
-  { value: "+10", label: "HAPPY\nCLIENTS" },
-  { value: "+3", label: "YEARS\nEXPERIENCE" },
-];
+import { Code2, Sparkles, ArrowUpRight } from "lucide-react";
 
 const cards = [
   {
@@ -22,81 +16,92 @@ const cards = [
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center py-20">
+    <section id="home" className="min-h-screen flex flex-col justify-center py-12 relative">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="relative"
       >
-        <h1 className="text-display text-[clamp(3.5rem,9vw,8rem)] text-foreground">
-          ADITYA
-        </h1>
-        <h1 className="text-display text-[clamp(3.5rem,9vw,8rem)] text-muted-display">
-          PAL
-        </h1>
-      </motion.div>
+        {/* Ghost Text Background */}
+        <div className="absolute -top-10 -left-6 whitespace-nowrap pointer-events-none select-none z-0">
+          <span className="text-display text-[15vw] text-ghost">ADITYA PAL</span>
+        </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="mt-6 text-sm font-bold tracking-[0.3em] text-primary uppercase"
-      >
-        Full Stack Engineer · Agentic AI Specialist
-      </motion.p>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.25 }}
-        className="mt-6 max-w-2xl text-muted-foreground text-lg leading-relaxed"
-      >
-        I create fast, elegant, scalable web apps and AI-powered systems
-        combining design, engineering and automation.
-      </motion.p>
-
-      {/* Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.4 }}
-        className="mt-14 grid grid-cols-3 gap-6 max-w-2xl"
-      >
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <div className="text-5xl md:text-6xl font-black text-foreground tracking-tight">
-              {stat.value}
-            </div>
-            <div className="mt-2 text-[11px] tracking-[0.15em] text-muted-foreground whitespace-pre-line font-medium">
-              {stat.label}
-            </div>
+        <div className="relative z-10">
+          <h1 className="text-display text-[clamp(4.5rem,14vw,12rem)] text-foreground">
+            ADITYA
+          </h1>
+          <div className="flex items-center gap-8">
+            <h1 className="text-display text-[clamp(4.5rem,14vw,12rem)] text-primary">
+              PAL
+            </h1>
+            <div className="hidden lg:block h-[3px] flex-1 bg-white/10 translate-y-[2vw]" />
           </div>
-        ))}
+        </div>
       </motion.div>
 
-      {/* Feature cards */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.55 }}
-        className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-12 flex items-center gap-6"
       >
-        {cards.map((card) => (
-          <div
+        <div className="flex gap-1">
+          <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-secondary/50" />
+          <div className="w-2 h-2 rounded-full bg-secondary/20" />
+        </div>
+        <p className="text-[10px] font-black tracking-[0.4em] text-muted-foreground uppercase">
+          Full Stack Engineer · AI Specialist
+        </p>
+      </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-12 max-w-2xl text-foreground/80 text-2xl leading-[1.2] font-black uppercase tracking-tight"
+      >
+        I build high-performance <span className="text-primary italic">digital systems</span> and agentic AI architectures for the next generation of products.
+      </motion.p>
+
+      {/* Action Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="mt-16 flex flex-wrap gap-4"
+      >
+        <button className="btn-neon">Hire Me</button>
+        <button className="px-8 py-4 rounded-3xl border border-white/10 font-black text-xs uppercase tracking-[0.2em] hover:bg-white/5 transition-all">
+          View Projects
+        </button>
+      </motion.div>
+
+      {/* Feature cards - Compact Bento Style */}
+      <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {cards.map((card, i) => (
+          <motion.div
             key={card.title}
-            className="group relative overflow-hidden rounded-3xl bg-surface border border-border p-7 hover:-translate-y-1 transition-transform duration-300"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 + i * 0.1 }}
+            className="bento-card p-10 group"
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-5 group-hover:bg-primary/25 transition-colors">
-              <card.icon className="w-6 h-6 text-primary" strokeWidth={2} />
+            <div className="flex items-start justify-between mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+                <card.icon className="w-6 h-6 text-primary group-hover:text-black transition-colors" />
+              </div>
+              <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-primary transition-colors" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">{card.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            <h3 className="text-3xl font-black text-foreground uppercase tracking-tight">{card.title}</h3>
+            <p className="mt-4 text-muted-foreground font-bold text-sm leading-relaxed max-w-xs">
               {card.desc}
             </p>
-            <div className="absolute -right-12 -bottom-12 w-40 h-40 rounded-full bg-primary/5 blur-2xl group-hover:bg-primary/10 transition-colors" />
-          </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

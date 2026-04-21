@@ -17,7 +17,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-24">
+    <section id="contact" className="py-16">
       <SectionHeading line1="LET'S WORK" line2="TOGETHER" />
 
       <motion.form
@@ -25,16 +25,16 @@ const ContactSection = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-14 space-y-6"
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-14 space-y-8"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Field label="Name">
             <input
               required
               name="name"
-              placeholder="Your Name"
-              className="input-field"
+              placeholder="YOUR NAME"
+              className="input-field uppercase font-bold tracking-widest text-[10px]"
             />
           </Field>
           <Field label="Email">
@@ -42,16 +42,16 @@ const ContactSection = () => {
               required
               type="email"
               name="email"
-              placeholder="your@email.com"
-              className="input-field"
+              placeholder="YOUR@EMAIL.COM"
+              className="input-field uppercase font-bold tracking-widest text-[10px]"
             />
           </Field>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Field label="Project Type">
-            <select required name="type" className="input-field" defaultValue="">
-              <option value="" disabled>Select…</option>
+            <select required name="type" className="input-field uppercase font-bold tracking-widest text-[10px]" defaultValue="">
+              <option value="" disabled>SELECT TYPE…</option>
               <option>Web App / SaaS</option>
               <option>AI Automation</option>
               <option>Landing Page</option>
@@ -59,8 +59,8 @@ const ContactSection = () => {
             </select>
           </Field>
           <Field label="Budget">
-            <select required name="budget" className="input-field" defaultValue="">
-              <option value="" disabled>Select…</option>
+            <select required name="budget" className="input-field uppercase font-bold tracking-widest text-[10px]" defaultValue="">
+              <option value="" disabled>SELECT BUDGET…</option>
               <option>$1k — $5k</option>
               <option>$5k — $15k</option>
               <option>$15k — $50k</option>
@@ -74,17 +74,17 @@ const ContactSection = () => {
             required
             name="message"
             rows={5}
-            placeholder="Tell me about your project…"
-            className="input-field resize-none"
+            placeholder="TELL ME ABOUT YOUR PROJECT GOALS…"
+            className="input-field resize-none uppercase font-bold tracking-widest text-[10px]"
           />
         </Field>
 
         <button
           type="submit"
           disabled={submitting}
-          className="w-full py-5 rounded-2xl bg-primary text-primary-foreground font-bold text-lg shadow-glow hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60"
+          className="btn-neon w-full py-6"
         >
-          {submitting ? "Sending…" : "Submit"}
+          {submitting ? "SENDING…" : "INITIATE PROJECT"}
         </button>
       </motion.form>
     </section>
@@ -93,7 +93,7 @@ const ContactSection = () => {
 
 const Field = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <label className="block">
-    <span className="block text-sm text-muted-foreground mb-2 font-medium">
+    <span className="block text-[10px] font-black tracking-[0.3em] text-primary uppercase mb-3">
       {label}
     </span>
     {children}

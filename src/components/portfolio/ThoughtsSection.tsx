@@ -25,35 +25,44 @@ const articles = [
 
 const ThoughtsSection = () => {
   return (
-    <section id="thoughts" className="min-h-screen py-24">
+    <section id="thoughts" className="py-16">
       <SectionHeading line1="DESIGN" line2="THOUGHTS" />
 
-      <div className="mt-14 space-y-4">
+      <div className="mt-20 space-y-4">
         {articles.map((a, i) => (
           <motion.a
             key={a.title}
             href="#"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="block group p-7 rounded-3xl border border-transparent hover:bg-surface hover:border-border transition-all duration-300"
+            transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="block group bento-card p-10 flex flex-col md:flex-row justify-between gap-12"
           >
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-2xl font-bold text-foreground max-w-md">
+            <div className="flex-1 space-y-6">
+              <div className="flex items-center gap-4">
+                <span className="text-[10px] font-black tracking-[0.3em] text-primary uppercase">
+                  {a.date}
+                </span>
+                <div className="w-8 h-[2px] bg-white/5 group-hover:bg-primary transition-colors" />
+                <span className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground uppercase opacity-40">
+                  {a.read}
+                </span>
+              </div>
+              
+              <h3 className="text-4xl font-black text-foreground uppercase tracking-tight leading-[0.9] group-hover:text-primary transition-colors">
                 {a.title}
               </h3>
-              <ArrowUpRight
-                className="w-5 h-5 text-primary shrink-0 group-hover:rotate-12 transition-transform"
-                strokeWidth={2.5}
-              />
+              
+              <p className="text-muted-foreground text-lg leading-relaxed font-bold max-w-2xl">
+                {a.desc}
+              </p>
             </div>
-            <p className="mt-3 text-muted-foreground leading-relaxed max-w-2xl">
-              {a.desc}
-            </p>
-            <div className="mt-5 flex items-center justify-between text-sm text-muted-foreground/70">
-              <span>{a.date}</span>
-              <span>{a.read}</span>
+
+            <div className="shrink-0 flex items-start justify-end">
+              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary transition-all">
+                <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-black transition-colors" />
+              </div>
             </div>
           </motion.a>
         ))}
