@@ -79,9 +79,9 @@ const HeroSection = () => {
         className="mt-16 flex flex-wrap gap-4"
       >
         <a href="#contact" className="btn-neon inline-flex items-center justify-center">Say Hello</a>
-        <button className="px-8 py-4 rounded-3xl border border-white/10 font-black text-xs uppercase tracking-[0.2em] hover:bg-white/5 transition-all">
+        <a href="#projects" className="px-8 py-4 rounded-3xl border border-white/10 font-black text-xs uppercase tracking-[0.2em] hover:bg-white/5 transition-all text-center">
           View Projects
-        </button>
+        </a>
       </motion.div>
 
       {/* Feature cards - Compact Bento Style */}
