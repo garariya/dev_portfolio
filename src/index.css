@@ -7,20 +7,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%; /* #0F0F0F */
+    --background: 0 0% 6%;
+    /* #0F0F0F */
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 10%; /* #1A1A1A */
+    --card: 0 0% 10%;
+    /* #1A1A1A */
     --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 72 100% 50%; /* Neon Lime #C9FF00 */
+    --primary: 72 100% 50%;
+    /* Neon Lime #C9FF00 */
     --primary-foreground: 0 0% 6%;
     --primary-glow: 72 100% 60%;
 
-    --secondary: 22 100% 50%; /* Electric Orange #FF5C00 */
+    --secondary: 22 100% 50%;
+    /* Electric Orange #FF5C00 */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 15%;
@@ -36,12 +40,14 @@
     --input: 0 0% 12%;
     --ring: 72 100% 50%;
 
-    --radius: 2rem; /* Massive 32px corners */
+    --radius: 2rem;
+    /* Massive 32px corners */
 
     /* Sawad Specific */
-    --profile-bg: 0 0% 96%; /* #F5F5F5 */
+    --profile-bg: 0 0% 96%;
+    /* #F5F5F5 */
     --profile-text: 0 0% 6%;
-    
+
     --shadow-sawad: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
     --shadow-neon: 0 0 30px rgba(201, 255, 0, 0.2);
   }
