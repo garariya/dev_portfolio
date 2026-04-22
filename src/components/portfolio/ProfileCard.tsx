@@ -1,11 +1,11 @@
-import { Github, Instagram, Linkedin, Twitter, Flame } from "lucide-react";
+import { Github, Instagram, Linkedin, Code2, Flame } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 
 const socials = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/aditya-garariya-276961323/", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/garariya", label: "GitHub" },
+  { icon: Instagram, href: "https://www.instagram.com/pixelpalette.aditya/", label: "Instagram" },
+  { icon: Code2, href: "https://codeforces.com/profile/Aditya0011", label: "Codeforces" },
 ];
 
 const ProfileCard = () => {
@@ -73,10 +73,6 @@ const ProfileCard = () => {
           ))}
         </div>
 
-        {/* Contact Link */}
-        <button className="mt-6 w-full py-3.5 rounded-xl bg-black text-white font-black text-[9px] uppercase tracking-[0.3em] hover:bg-secondary transition-all duration-500 shadow-xl">
-          Get in touch
-        </button>
       </div>
     </div>
   );

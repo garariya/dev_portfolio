@@ -3,27 +3,13 @@ import { ArrowUpRight } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const items = [
-  {
-    role: "Freelance Developer & AI Builder",
-    desc: "Building agentic AI workflows and end-to-end SaaS products for startups and creators worldwide.",
-    period: "2024 — Present",
-  },
-  {
-    role: "Frontend Designer",
-    desc: "Crafted polished interfaces and design systems for early-stage products with a focus on motion and detail.",
-    period: "2023 — 2024",
-  },
-  {
-    role: "Learning + Building Systems",
-    desc: "Deep-dived into systems design, modern stacks and shipped first production projects.",
-    period: "2022 — 2023",
-  },
+  
 ];
 
 const ExperienceSection = () => {
   return (
     <section id="experience" className="py-16">
-      <SectionHeading line1="3 YEARS OF" line2="EXPERIENCE" />
+      <SectionHeading line1="2 YEARS OF" line2="EXPERIENCE" />
 
       <div className="mt-20 space-y-6">
         {items.map((item, i) => (

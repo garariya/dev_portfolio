@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Sparkles, ArrowUpRight } from "lucide-react";
+import { Code2, Sparkles, ArrowUpRight, Palette } from "lucide-react";
 
 const cards = [
   {
@@ -11,6 +11,11 @@ const cards = [
     icon: Sparkles,
     title: "AI Automation",
     desc: "Agentic workflows and intelligent systems that scale.",
+  },
+  {
+    icon: Palette,
+    title: "Design",
+    desc: "User-focused interfaces, modern visuals, and seamless digital experiences.",
   },
 ];
 
@@ -53,7 +58,7 @@ const HeroSection = () => {
           <div className="w-2 h-2 rounded-full bg-secondary/20" />
         </div>
         <p className="text-[10px] font-black tracking-[0.4em] text-muted-foreground uppercase">
-          Full Stack Engineer · AI Specialist
+          Product Builder · Problem Solver · AI Systems Creator
         </p>
       </motion.div>
 
@@ -63,7 +68,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="mt-12 max-w-2xl text-foreground/80 text-2xl leading-[1.2] font-black uppercase tracking-tight"
       >
-        I build high-performance <span className="text-primary italic">digital systems</span> and agentic AI architectures for the next generation of products.
+        I turn complex problems into scalable <span className="text-primary italic">products</span> using code, design, and intelligent AI systems.
       </motion.p>
 
       {/* Action Buttons */}
@@ -73,7 +78,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="mt-16 flex flex-wrap gap-4"
       >
-        <button className="btn-neon">Hire Me</button>
+        <a href="#contact" className="btn-neon inline-flex items-center justify-center">Say Hello</a>
         <button className="px-8 py-4 rounded-3xl border border-white/10 font-black text-xs uppercase tracking-[0.2em] hover:bg-white/5 transition-all">
           View Projects
         </button>

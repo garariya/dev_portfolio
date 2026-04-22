@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 
 const tools = [
-  { name: "Framer", role: "Website Builder", letter: "F" },
-  { name: "Figma", role: "Design Tool", letter: "Fi" },
-  { name: "React", role: "UI Library", letter: "R" },
-  { name: "Next.js", role: "React Framework", letter: "N" },
-  { name: "Node.js", role: "Backend Runtime", letter: "No" },
-  { name: "Python", role: "AI & Scripting", letter: "Py" },
-  { name: "OpenAI", role: "AI Models", letter: "O" },
-  { name: "Claude", role: "AI Assistant", letter: "C" },
-  { name: "Notion", role: "Productivity Tool", letter: "Nt" },
-  { name: "Supabase", role: "Backend Platform", letter: "S" },
-];
+  { name: "React", role: "Frontend Library", letter: "R" },
+  { name: "JavaScript", role: "Programming Language", letter: "J" },
+  { name: "Node.js", role: "Backend Runtime", letter: "N" },
+  { name: "Express.js", role: "Backend Framework", letter: "E" },
+  { name: "SQL", role: "Database Query Language", letter: "S" },
+  { name: "Prisma", role: "ORM & Database Toolkit", letter: "P" },
+  { name: "GitHub", role: "Version Control", letter: "G" },
+  { name: "LangChain", role: "LLM Application Framework", letter: "L" },
+  { name: "LangGraph", role: "AI Agent Workflow", letter: "Lg" },
+  { name: "Figma", role: "UI/UX Design Tool", letter: "F" }
+]
 
 const ToolsSection = () => {
   return (
