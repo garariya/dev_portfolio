@@ -1,14 +1,38 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { Resend } from "resend";
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import { Resend } from 'resend';
+
+// Load environment variables from .env
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 3001;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Security Headers to help with CSP/CORS
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src 'self' http://localhost:3001 http://localhost:8080 http://localhost:5173;");
+  next();
+});
+
+// Root route to prevent 404 on http://localhost:3001/
+app.get('/', (req, res) => {
+  res.status(200).send('Portfolio Backend is running.');
+});
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Only allow POST requests
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+// Health check
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
+// Contact endpoint
+app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, type, subject, message } = req.body;
 
@@ -38,8 +62,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     return res.status(200).json({ success: true, id: data?.id });
-  } catch (error) {
-    console.error("API Error:", error);
+  } catch (err) {
+    console.error("API Error:", err);
     return res.status(500).json({ error: "Internal server error" });
   }
-}
+});
+
+// Handle Chrome DevTools noise silently
+app.get('/.well-known/appspecific/com.chrome.devtools.json', (req, res) => {
+  res.status(204).end();
+});
+
+app.listen(port, () => {
+  console.log(`Backend server running at http://localhost:${port}`);
+});
