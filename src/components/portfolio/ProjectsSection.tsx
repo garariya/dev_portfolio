@@ -4,20 +4,17 @@ import SectionHeading from "./SectionHeading";
 
 const projects = [
   {
-    title: "AI Sales Agent",
-    desc: "Autonomous outbound lead generation system.",
-    tag: "Agentic AI",
+    title: "Bank Churn Analysis",
+    desc: "Data analysis project focused on predicting customer churn for a bank using machine learning techniques.",
+    tag: "Data Science",
+    link: "https://github.com/garariya/SectionE_G-12_Banking_churn_prediction",
   },
   {
-    title: "Portfolio Builder SaaS",
-    desc: "Personal branding platform for creators.",
-    tag: "SaaS Product",
-  },
-  {
-    title: "Smart Dashboard",
-    desc: "Analytics + automation control center.",
-    tag: "Dashboard",
-  },
+    title: "EV Charging Station Model",
+    desc: "A model that helps you with EV infrastructure analysis and Fast DC status prediction",
+    tag: "Machine Learning",
+    link: "https://github.com/garariya/EV_charging_station_model"
+  }
 ];
 
 const ProjectsSection = () => {
@@ -29,7 +26,9 @@ const ProjectsSection = () => {
         {projects.map((p, i) => (
           <motion.a
             key={p.title}
-            href="#"
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
