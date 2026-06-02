@@ -4,19 +4,19 @@ import SectionHeading from "./SectionHeading";
 
 const articles = [
   {
-    title: "How AI Changes Development",
+    title: "How AI Changes Thinking",
     desc: "From copilots to autonomous agents — a look at what shipping software in 2025 actually feels like.",
     date: "Mar 12, 2025",
     read: "8 min read",
   },
   {
-    title: "Building Faster with Framer",
+    title: "How to think original in the era of AI",
     desc: "Why pairing Framer with a real codebase has become my favorite stack for shipping landing pages in hours.",
     date: "Feb 02, 2025",
     read: "6 min read",
   },
   {
-    title: "Why Design Sells Products",
+    title: "Why Design is your identity and not just decoration",
     desc: "Design is not decoration. It is the most leveraged growth channel a young product can invest in.",
     date: "Jan 18, 2025",
     read: "5 min read",
