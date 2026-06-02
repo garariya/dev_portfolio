@@ -14,6 +14,12 @@ const projects = [
     desc: "A model that helps you with EV infrastructure analysis and Fast DC status prediction",
     tag: "Machine Learning",
     link: "https://github.com/garariya/EV_charging_station_model"
+  },
+  {
+    title: "ResearchGPT", 
+    desc: "End-to-end RAG-based AI research assistant that lets users query PDF papers and arXiv articles using Groq LLM, ChromaDB, and semantic search.",
+    tag: "AI",
+    link: "https://github.com/garariya/ResearchGPT"
   }
 ];
 
