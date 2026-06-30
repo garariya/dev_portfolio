@@ -6,16 +6,19 @@ const cards = [
     icon: Code2,
     title: "Development",
     desc: "End-to-end product engineering across web, mobile and APIs.",
+    link: ""
   },
   {
     icon: Sparkles,
-    title: "AI Automation",
+    title: "Data analysis and Automation",
     desc: "Agentic workflows and intelligent systems that scale.",
+    link: "https://garariya.github.io/DVA_portfolio/"
   },
   {
     icon: Palette,
     title: "Design",
     desc: "User-focused interfaces, modern visuals, and seamless digital experiences.",
+    link: "https://www.instagram.com/pixelpalette.aditya/"
   },
 ];
 
@@ -86,26 +89,37 @@ const HeroSection = () => {
 
       {/* Feature cards - Compact Bento Style */}
       <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-6">
-        {cards.map((card, i) => (
-          <motion.div
-            key={card.title}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 + i * 0.1 }}
-            className="bento-card p-10 group"
-          >
-            <div className="flex items-start justify-between mb-8">
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
-                <card.icon className="w-6 h-6 text-primary group-hover:text-black transition-colors" />
-              </div>
-              <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-primary transition-colors" />
-            </div>
-            <h3 className="text-3xl font-black text-foreground uppercase tracking-tight">{card.title}</h3>
-            <p className="mt-4 text-muted-foreground font-bold text-sm leading-relaxed max-w-xs">
-              {card.desc}
-            </p>
-          </motion.div>
-        ))}
+      {cards.map((card, i) => (
+  <a
+    key={card.title}
+    href={card.link || "#"}
+    target={card.link ? "_blank" : "_self"}
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.6 + i * 0.1 }}
+      className="bento-card p-10 group"
+    >
+      <div className="flex items-start justify-between mb-8">
+        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+          <card.icon className="w-6 h-6 text-primary group-hover:text-black transition-colors" />
+        </div>
+        <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-primary transition-colors" />
+      </div>
+
+      <h3 className="text-3xl font-black text-foreground uppercase tracking-tight">
+        {card.title}
+      </h3>
+
+      <p className="mt-4 text-muted-foreground font-bold text-sm leading-relaxed max-w-xs">
+        {card.desc}
+      </p>
+    </motion.div>
+  </a>
+))}
       </div>
     </section>
   );

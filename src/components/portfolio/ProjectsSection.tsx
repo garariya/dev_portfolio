@@ -16,10 +16,10 @@ const projects = [
     link: "https://github.com/garariya/EV_charging_station_model"
   },
   {
-    title: "ResearchGPT", 
-    desc: "End-to-end RAG-based AI research assistant that lets users query PDF papers and arXiv articles using Groq LLM, ChromaDB, and semantic search.",
+    title: "CompanyOS", 
+    desc: "A full-stack ERP platform for managing employees, departments, projects, tasks, notifications, analytics, and real-time communication.",
     tag: "AI",
-    link: "https://github.com/garariya/ResearchGPT"
+    link: "https://github.com/garariya/Company_OS"
   }
 ];
 
